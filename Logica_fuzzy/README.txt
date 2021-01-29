@@ -1,1 +1,1 @@
-Est· pasta contem programas em lÛgica fuzzy para tratamento de insertezas e controle de um ar condicionade e um guindaste. Os programas foram feitos usando a toolbox de lÛgica fuzzy do Matlab.
+Est√° pasta contem programas em l√≥gica fuzzy para tratamento de incertezas e controle de um ar condicionade e um guindaste. Os programas foram feitos usando a toolbox de l√≥gica fuzzy do Matlab.
