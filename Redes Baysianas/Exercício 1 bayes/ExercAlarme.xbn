@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<ANALYSISNOTEBOOK NAME="Notebook.bndefault" ROOT="bndefault">
+  <BNMODEL NAME="bndefault"><STATICPROPERTIES><FORMAT>MSR DTAS XML</FORMAT>
+        <VERSION>1.0</VERSION>
+        <CREATOR>Microsoft Research DTAS</CREATOR>
+        </STATICPROPERTIES>
+      <DYNAMICPROPERTIES><PROPERTYTYPE NAME="DTASDG_Notes" TYPE="stringarray"><COMMENT>Notes on the diagram</COMMENT>
+          </PROPERTYTYPE>
+        <PROPERTYTYPE NAME="MS_Addins" TYPE="stringarray"/>
+        <PROPERTYTYPE NAME="MS_Asym" TYPE="string"><COMMENT>Asymmetric assessment information stored as a string</COMMENT>
+          </PROPERTYTYPE>
+        </DYNAMICPROPERTIES>
+      <VARIABLES><VAR NAME="Alarme" TYPE="discrete" XPOS="9101" YPOS="7196"><FULLNAME>Alarme</FULLNAME>
+          <STATENAME>Yes</STATENAME>
+          <STATENAME>No</STATENAME>
+          </VAR>
+        <VAR NAME="JoaoLiga" TYPE="discrete" XPOS="2249" YPOS="11933"><FULLNAME>JoaoLiga</FULLNAME>
+          <STATENAME>Yes</STATENAME>
+          <STATENAME>No</STATENAME>
+          </VAR>
+        <VAR NAME="MariaLiga" TYPE="discrete" XPOS="17067" YPOS="11933"><FULLNAME>MariaLiga</FULLNAME>
+          <STATENAME>Yes</STATENAME>
+          <STATENAME>No</STATENAME>
+          </VAR>
+        <VAR NAME="Roubo" TYPE="discrete" XPOS="1959" YPOS="2251"><FULLNAME>Roubo</FULLNAME>
+          <STATENAME>Yes</STATENAME>
+          <STATENAME>No</STATENAME>
+          </VAR>
+        <VAR NAME="Terremoto" TYPE="discrete" XPOS="16749" YPOS="2275"><FULLNAME>Terremoto</FULLNAME>
+          <STATENAME>Yes</STATENAME>
+          <STATENAME>No</STATENAME>
+          </VAR>
+        </VARIABLES>
+      <STRUCTURE><ARC PARENT="Roubo" CHILD="Alarme"/>
+        <ARC PARENT="Terremoto" CHILD="Alarme"/>
+        <ARC PARENT="Alarme" CHILD="JoaoLiga"/>
+        <ARC PARENT="Alarme" CHILD="MariaLiga"/>
+        </STRUCTURE>
+      <DISTRIBUTIONS><DIST TYPE="discrete"><CONDSET><CONDELEM NAME="Roubo"/>
+            <CONDELEM NAME="Terremoto"/>
+            </CONDSET>
+          <PRIVATE NAME="Alarme"/>
+          <DPIS><DPI INDEXES="0 0 ">0.95 0.05 </DPI>
+            <DPI INDEXES="0 1 ">0.94 0.06 </DPI>
+            <DPI INDEXES="1 0 ">0.29 0.71 </DPI>
+            <DPI INDEXES="1 1 ">0.001 0.999 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><CONDSET><CONDELEM NAME="Alarme"/>
+            </CONDSET>
+          <PRIVATE NAME="JoaoLiga"/>
+          <DPIS><DPI INDEXES="0 ">0.9 0.1 </DPI>
+            <DPI INDEXES="1 ">0.05 0.95 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><CONDSET><CONDELEM NAME="Alarme"/>
+            </CONDSET>
+          <PRIVATE NAME="MariaLiga"/>
+          <DPIS><DPI INDEXES="0 ">0.7 0.3 </DPI>
+            <DPI INDEXES="1 ">0.01 0.99 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><PRIVATE NAME="Roubo"/>
+          <DPIS><DPI>0.001 0.999 </DPI>
+            </DPIS>
+          </DIST>
+        <DIST TYPE="discrete"><PRIVATE NAME="Terremoto"/>
+          <DPIS><DPI>0.002 0.998 </DPI>
+            </DPIS>
+          </DIST>
+        </DISTRIBUTIONS>
+      </BNMODEL>
+    </ANALYSISNOTEBOOK>
